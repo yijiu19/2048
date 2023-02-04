@@ -1,8 +1,9 @@
 import cv2
 import win32api
+import win32con
 
 
-def cvview(event):
+def cvview():
     # 加载摄像头
     cap = cv2.VideoCapture(0)
     # 设置背景帧
@@ -28,13 +29,13 @@ def cvview(event):
             x_movement += (a - c)
             y_movement += (b - d)
         if x_movement > 80:
-            pass
-            win32api.keybd_event(65, 0, 0, 0)
-            # return "a"
+            # win32api.keybd_event(65, 0, 0, 0)
+            # win32api.keybd_event(65, 0, win32con.KEYEVENTF_KEYUP, 0)
+            return "a"
         elif x_movement < -80:
-            pass
-            win32api.keybd_event(68, 0, 0, 0)
-            # return "d"
+            # win32api.keybd_event(68, 0, 0, 0)
+            # win32api.keybd_event(68, 0, win32con.KEYEVENTF_KEYUP, 0)
+            return "d"
 
         # 更新前一帧
         previous_gray = gray_frame.copy()
