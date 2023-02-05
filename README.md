@@ -5,4 +5,4 @@
       向右移动  →
       向后移动  ↓
 # 如果仅仅想玩这个小游戏，则直接下载maine.exe文件
-# 如果想用Python编译器运行，需要下载main.py和cv.py文件，并且需要下载opencv-Python
+# 如果想用Python编译器运行，需要下载main.py和cv.py文件，并且需要下载opencv-Python库
