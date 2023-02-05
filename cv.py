@@ -1,6 +1,4 @@
 import cv2
-import win32api
-import win32con
 
 
 def cvview():
@@ -28,13 +26,17 @@ def cvview():
             c, d = old.ravel()
             x_movement += (a - c)
             y_movement += (b - d)
-        if x_movement > 80:
-            # win32api.keybd_event(65, 0, 0, 0)
-            # win32api.keybd_event(65, 0, win32con.KEYEVENTF_KEYUP, 0)
+        if x_movement > 15 and y_movement < -15:
+            cap.release()
+            return "w"
+        elif x_movement < -13 and y_movement > 13:
+            cap.release()
+            return "s"
+        elif x_movement > 80:
+            cap.release()
             return "a"
         elif x_movement < -80:
-            # win32api.keybd_event(68, 0, 0, 0)
-            # win32api.keybd_event(68, 0, win32con.KEYEVENTF_KEYUP, 0)
+            cap.release()
             return "d"
 
         # 更新前一帧
@@ -42,5 +44,5 @@ def cvview():
         previous_points = new_points.reshape(-1, 1, 2)
 
         # 释放摄像头
-    cap.release()
-    cv2.destroyAllWindows()
+    # cap.release()
+    # cv2.destroyAllWindows()
