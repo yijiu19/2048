@@ -87,7 +87,6 @@ def game_over():
 
 def play():
     show_view()
-    # ipt = input()
     ipt = cv.cvview()
 
     if ipt not in ('w', 'a', 's', 'd'):
