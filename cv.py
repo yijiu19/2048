@@ -26,10 +26,10 @@ def cvview():
             c, d = old.ravel()
             x_movement += (a - c)
             y_movement += (b - d)
-        if x_movement > 15 and y_movement < -15:
+        if x_movement > 13 and y_movement < -20:
             cap.release()
             return "w"
-        elif x_movement < -13 and y_movement > 13:
+        elif x_movement < -13 and y_movement > 20:
             cap.release()
             return "s"
         elif x_movement > 80:
@@ -42,7 +42,4 @@ def cvview():
         # 更新前一帧
         previous_gray = gray_frame.copy()
         previous_points = new_points.reshape(-1, 1, 2)
-
-        # 释放摄像头
-    # cap.release()
-    # cv2.destroyAllWindows()
+        
