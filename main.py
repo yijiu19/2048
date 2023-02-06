@@ -89,15 +89,11 @@ def play():
     show_view()
     ipt = cv.cvview()
 
-    if ipt not in ('w', 'a', 's', 'd'):
-        print('输入有误')
-        play()
-    else:
-        v = form_view(ipt)
-        if can_merge(v):
-            return merge(v, ipt)
-        print('操作失败')
-        play()
+    v = form_view(ipt)
+    if can_merge(v):
+        return merge(v, ipt)
+    print('操作失败')
+    play()
 
 
 add_new_item()
